@@ -78,7 +78,8 @@ if [ $stage -le 1 ] && [ $stop_stage -ge 1 ]; then
   # to $dl_dir/LibriTTS
   mkdir -p data/manifests
   if [ ! -e data/manifests/.libritts.done ]; then
-    lhotse prepare libritts ${dataset_parts} -j $nj $dl_dir/LibriTTS data/manifests
+    #lhotse prepare libritts ${dataset_parts} -j $nj $dl_dir/LibriTTS data/manifests
+    lhotse prepare libritts -j $nj $dl_dir/LibriTTS data/manifests
     touch data/manifests/.libritts.done
   fi
 fi
