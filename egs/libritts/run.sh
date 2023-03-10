@@ -21,7 +21,7 @@ dl_dir=/home/work/workspace/LibriSpeech/tts
 
 # dataset_parts="-p dev-clean -p test-clean"  # debug
 #dataset_parts="--dataset-parts all"  # all
-#dataset_parts="all"  # all
+dataset_parts="all"  # all
 
 max_duration=40
 filter_max_duration=20
