@@ -45,6 +45,8 @@ num_epochs=10
 audio_extractor="Encodec"  # or Fbank
 audio_feats_dir=data/tokenized
 
+world_size=8
+
 exp_suffix=""
 
 . shared/parse_options.sh || exit 1
