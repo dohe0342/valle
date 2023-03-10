@@ -23,8 +23,8 @@ dl_dir=/home/work/workspace/LibriSpeech/tts
 #dataset_parts="--dataset-parts all"  # all
 #dataset_parts="all"  # all
 #dataset_parts="train-clean-100"  # all
-dataset_parts="train-clean-360"  # all
-#dataset_parts="train-other-500"  # all
+#dataset_parts="train-clean-360"  # all
+dataset_parts="train-other-500"  # all
 
 max_duration=40
 filter_max_duration=20
