@@ -103,7 +103,7 @@ fi
 if [ $stage -le 3 ] && [ $stop_stage -ge 3 ]; then
   log "Stage 3: Prepare LibriTTS train/dev/test"
   if [ ! -e ${audio_feats_dir}/.libritts.train.done ]; then
-    if [ "${dataset_parts}" == "--dataset-parts all" ];then
+    if [ "${dataset_parts}" == "all" ];then
       # train
       lhotse combine \
         ${audio_feats_dir}/libritts_cuts_train-clean-100.jsonl.gz \
