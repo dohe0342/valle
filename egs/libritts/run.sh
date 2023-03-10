@@ -67,8 +67,8 @@ if [ $stage -le 0 ] && [ $stop_stage -ge 0 ]; then
   #   ln -sfv /path/to/LibriTTS $dl_dir/LibriTTS
   #
   if [ ! -d $dl_dir/LibriTTS/dev-other ]; then
-    # lhotse download libritts $dl_dir
-    lhotse download libritts ${dataset_parts} $dl_dir
+    lhotse download libritts $dl_dir
+    #lhotse download libritts ${dataset_parts} $dl_dir
   fi
 fi
 
