@@ -17,7 +17,7 @@ stop_stage=3
 #      You can download LibriTTS from https://www.openslr.org/60/
 #
 
-dl_dir=$PWD/download
+dl_dir=/home/work/workspace/LibriSpeech/tts/LibriTTS
 
 # dataset_parts="-p dev-clean -p test-clean"  # debug
 dataset_parts="--dataset-parts all"  # all
