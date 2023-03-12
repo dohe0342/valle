@@ -41,6 +41,7 @@ accumulate_grad_steps=1
 base_lr=0.05
 
 num_epochs=10
+start_epoch=1
 
 audio_extractor="Encodec"  # or Fbank
 audio_feats_dir=data/tokenized
