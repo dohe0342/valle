@@ -150,7 +150,7 @@ if [ $stage -le 4 ] && [ $stop_stage -ge 4 ]; then
     --model-name "${model_name}" --norm-first true --add-prenet false \
     --decoder-dim ${decoder_dim} --nhead ${nhead} --num-decoder-layers ${num_decoder_layers} \
     --accumulate-grad-steps ${accumulate_grad_steps} --base-lr ${base_lr} \
-    --num-epochs ${num_epochs} --start-epoch 1 --start-batch 0 \
+	--num-epochs ${num_epochs} --start-epoch ${start_epoch} --start-batch 0 \
     --exp-dir exp/${model_name}${exp_suffix} \
 	--world-size ${world_size}
 fi
