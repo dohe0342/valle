@@ -29,7 +29,7 @@ dataset_parts="all"  # all
 max_duration=40
 filter_max_duration=20
 
-use_fp16=false
+use_fp16=true
 dtype="float32"
 
 model_name="valle"
