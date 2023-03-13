@@ -599,7 +599,8 @@ def train_one_epoch(
             # NOTE: We use reduction==sum and loss is computed over utterances
             # in the batch and there is no normalization to it so far.
 
-            scaler.scale(loss).backward()
+            #scaler.scale(loss).backward()
+            loss.backward()
             if params.batch_idx_train >= params.accumulate_grad_steps:
                 if params.batch_idx_train % params.accumulate_grad_steps == 0:
                     if params.optimizer_name not in ["ScaledAdam", "Eve"]:
