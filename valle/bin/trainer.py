@@ -599,19 +599,17 @@ def train_one_epoch(
             # NOTE: We use reduction==sum and loss is computed over utterances
             # in the batch and there is no normalization to it so far.
 
-            #scaler.scale(loss).backward()
-            loss.backward()
+            scaler.scale(loss).backward()
             if params.batch_idx_train >= params.accumulate_grad_steps:
                 if params.batch_idx_train % params.accumulate_grad_steps == 0:
                     if params.optimizer_name not in ["ScaledAdam", "Eve"]:
                         # Unscales the gradients of optimizer's assigned params in-place
-                        #scaler.unscale_(optimizer)
+                        scaler.unscale_(optimizer)
                         # Since the gradients of optimizer's assigned params are unscaled, clips as usual:
                         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 
-                    #scaler.step(optimizer)
-                    #scaler.update()
-                    optimizer.step()
+                    scaler.step(optimizer)
+                    scaler.update()
                     optimizer.zero_grad()
 
                     for k in range(params.accumulate_grad_steps):
@@ -912,7 +910,7 @@ def run(rank, world_size, args):
     )
     if checkpoints and "grad_scaler" in checkpoints:
         logging.info("Loading grad scaler state dict")
-        #scaler.load_state_dict(checkpoints["grad_scaler"])
+        scaler.load_state_dict(checkpoints["grad_scaler"])
 
     for epoch in range(params.start_epoch, params.num_epochs + 1):
         if isinstance(scheduler, Eden):
