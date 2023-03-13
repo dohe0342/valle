@@ -910,7 +910,7 @@ def run(rank, world_size, args):
     )
     if checkpoints and "grad_scaler" in checkpoints:
         logging.info("Loading grad scaler state dict")
-        scaler.load_state_dict(checkpoints["grad_scaler"])
+        #scaler.load_state_dict(checkpoints["grad_scaler"])
 
     for epoch in range(params.start_epoch, params.num_epochs + 1):
         if isinstance(scheduler, Eden):
