@@ -22,7 +22,6 @@ from typing import List, Optional, Tuple, Union
 
 import torch
 from lhotse.utils import fix_random_seed
-from scaling import ActivationBalancer
 from torch import Tensor
 from torch.optim import Optimizer
 
