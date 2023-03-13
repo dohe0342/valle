@@ -605,12 +605,13 @@ def train_one_epoch(
                 if params.batch_idx_train % params.accumulate_grad_steps == 0:
                     if params.optimizer_name not in ["ScaledAdam", "Eve"]:
                         # Unscales the gradients of optimizer's assigned params in-place
-                        scaler.unscale_(optimizer)
+                        #scaler.unscale_(optimizer)
                         # Since the gradients of optimizer's assigned params are unscaled, clips as usual:
                         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 
-                    scaler.step(optimizer)
-                    scaler.update()
+                    #scaler.step(optimizer)
+                    #scaler.update()
+                    optimizer.step()
                     optimizer.zero_grad()
 
                     for k in range(params.accumulate_grad_steps):
