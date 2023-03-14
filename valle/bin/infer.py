@@ -184,8 +184,8 @@ def main():
             model.visualize(encoded_frames, args.output_dir)
 
 
-torch.set_num_threads(20)
-torch.set_num_interop_threads(20)
+torch.set_num_threads(64)
+torch.set_num_interop_threads(64)
 torch._C._jit_set_profiling_executor(False)
 torch._C._jit_set_profiling_mode(False)
 torch._C._set_graph_executor_optimize(False)
