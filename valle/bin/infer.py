@@ -117,8 +117,8 @@ def main():
     audio_tokenizer = AudioTokenizer()
 
     device = torch.device("cpu")
-    if torch.cuda.is_available():
-        device = torch.device("cuda", 0)
+    #if torch.cuda.is_available():
+    #    device = torch.device("cuda", 0)
 
     model = get_model(args)
     if args.checkpoint:
